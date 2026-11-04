@@ -1,0 +1,19 @@
+{
+  "name": "Курьер Старт — инструкция Яндекс Еда",
+  "short_name": "Курьер Старт",
+  "description": "Пошаговая инструкция: как курьеру создать аккаунт в Яндекс Еде — документы, самозанятость, анкета, фотоконтроль и первая смена.",
+  "lang": "ru",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f4f1",
+  "theme_color": "#ff3f17",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

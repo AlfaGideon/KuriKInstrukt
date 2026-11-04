@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'ru.kurik.instrukt'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "ru.kurik.instrukt"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Для установки «с руки» достаточно подписи debug-ключом.
+            // Для публикации в сторе замени на собственный signingConfig.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+/*
+ * Интерфейс приложения живёт в /app (это и PWA, и исходники для WebView).
+ * Перед сборкой копируем его в assets, чтобы APK работал полностью офлайн.
+ */
+tasks.register('syncWeb', Copy) {
+    from rootProject.file('../app')
+    into file('src/main/assets/www')
+}
+
+tasks.named('preBuild').configure {
+    dependsOn('syncWeb')
+}

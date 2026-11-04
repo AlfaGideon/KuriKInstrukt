@@ -1,0 +1,16 @@
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/app/src/main/assets/www/
+android/.idea/
+*.iml
+
+# Сборки
+dist/*.apk
+
+# Прочее
+.DS_Store
+Thumbs.db
+*.log

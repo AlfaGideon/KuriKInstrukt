@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>Курьер Старт — инструкция: аккаунт курьера Яндекс Еды</title>
+<meta name="description" content="Пошаговая инструкция: как курьеру создать аккаунт в Яндекс Еде — документы, самозанятость, анкета, фотоконтроль и первая смена." />
+<meta name="theme-color" content="#FF3F17" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-steps" viewBox="0 0 24 24"><path d="M4 17h4M4 12h9M4 7h15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="16" r="2.4" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-docs" viewBox="0 0 24 24"><path d="M7 3.8h7.2L19 8.6V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.8a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M13.6 4v4.8H18.6M9 13h6M9 16.6h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-faq" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6" stroke="currentColor" stroke-width="1.9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.6 2.3c-.8.5-1.2 1-1.2 1.9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="12" cy="16.8" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M14.5 5 8 12l6.5 7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.8 4.4 4.2L19 6.6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12.8 5.6 19.4 12l-6.6 6.4" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M13.5 6.5 16 4a4.2 4.2 0 0 1 5.9 5.9l-2.5 2.5M10.5 17.5 8 20a4.2 4.2 0 0 1-5.9-5.9l2.5-2.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M9 15l6-6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.6V12l3 1.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.2 5 6v6c0 4.2 2.9 7.4 7 8.8 4.1-1.4 7-4.6 7-8.8V6l-7-2.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="app" id="app">
+  <header class="topbar" id="topbar">
+    <button class="icon-btn back" id="btnBack" type="button" aria-label="Назад">
+      <svg class="ico"><use href="#i-back"/></svg>
+    </button>
+    <div class="topbar-title" id="topTitle">Курьер Старт</div>
+    <button class="icon-btn ghost" id="btnReset" type="button" aria-label="Сбросить прогресс" title="Сбросить прогресс">
+      <span>↺</span>
+    </button>
+  </header>
+
+  <main class="view" id="view" tabindex="-1"></main>
+
+  <div class="stepbar" id="stepbar"></div>
+
+  <nav class="tabbar" id="tabbar">
+    <a class="tab" href="#/home" data-tab="home">
+      <svg class="ico"><use href="#i-steps"/></svg><span>Шаги</span>
+    </a>
+    <a class="tab" href="#/docs" data-tab="docs">
+      <svg class="ico"><use href="#i-docs"/></svg><span>Документы</span>
+    </a>
+    <a class="tab" href="#/faq" data-tab="faq">
+      <svg class="ico"><use href="#i-faq"/></svg><span>Вопросы</span>
+    </a>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
