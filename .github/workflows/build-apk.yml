@@ -5,6 +5,9 @@ on:
     branches: [main, "arena/**"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -39,6 +42,18 @@ jobs:
           mkdir -p dist
           cp android/app/build/outputs/apk/release/app-release.apk dist/KuriK-Instrukt.apk
           ls -lh dist
+
+      - name: Publish APK into repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/KuriK-Instrukt.apk
+          if git diff --cached --quiet; then
+            echo "APK не изменился"
+            exit 0
+          fi
+          git commit -m "build: собран APK KuriK-Instrukt [skip ci]"
+          git push
 
       - uses: actions/upload-artifact@v4
         with:
