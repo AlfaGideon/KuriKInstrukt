@@ -370,8 +370,30 @@
     else location.hash = "#/home";
   });
 
-  document.getElementById("btnReset").addEventListener("click", () => {
-    if (!confirm("Сбросить весь прогресс?")) return;
+  /* Сброс без window.confirm: в WebView системные диалоги недоступны. */
+  let resetArmed = false;
+  let resetTimer = null;
+  const resetBtn = document.getElementById("btnReset");
+
+  resetBtn.addEventListener("click", () => {
+    if (!resetArmed) {
+      resetArmed = true;
+      resetBtn.textContent = "!";
+      resetBtn.style.color = "var(--brand)";
+      toast("Нажми ещё раз, чтобы сбросить");
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        resetArmed = false;
+        resetBtn.textContent = "↺";
+        resetBtn.style.color = "";
+      }, 3200);
+      return;
+    }
+
+    clearTimeout(resetTimer);
+    resetArmed = false;
+    resetBtn.textContent = "↺";
+    resetBtn.style.color = "";
     state = emptyState();
     save();
     render();
